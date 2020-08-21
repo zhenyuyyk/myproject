@@ -1,18 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    jenkins测试项目<br></br>
+    我在 {{ process.NODE_ENV }} 环境，url为：{{ process.VUE_APP_URL }}
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      process:process.env
+    }
+  },
+  created() {
+    console.log(process.env)
+  },
+  methods: {}
 }
 </script>
